@@ -1,0 +1,46 @@
+- name: Get vector distrib
+  ansible.builtin.get_url:
+    url: https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rpm
+    dest: ./{{ vector_version }}-1.x86_64.rpm
+  tags:
+    - vector
+    - distr
+
+- name: Install vector packages
+  become: true
+  ansible.builtin.yum:
+    name: ./{{ vector_version }}-1.x86_64.rpm
+  changed_when: false
+  tags:
+    - vector
+    - distr
+
+- name: Vector | Config Service Vector
+  become: true
+  ansible.builtin.template:
+    src: vector.service.j2
+    dest: /usr/lib/systemd/system/vector.service
+    mode: "0644"
+
+- name: Vector | Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ vector_config_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Deploy vector configuration
+  become: true
+  ansible.builtin.template:
+    src: templates/vector.yaml.j2
+    dest: "{{ vector_config_dir }}/vector.yml"
+    mode: "0644"
+  notify: Start vector service
+  tags:
+    - vector
+    - config
+
+- name: Flush handlers
+  ansible.builtin.meta: flush_handlers
+  tags:
+    - vector
+    - restart service

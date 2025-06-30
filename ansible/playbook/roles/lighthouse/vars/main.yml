@@ -1,0 +1,3 @@
+lighthouse_vcs: https://github.com/VKCOM/lighthouse.git
+lighthouse_dir: /usr/lighthouse
+lighthouse_nginx_user: ubuntu
