@@ -16,9 +16,38 @@
 ### Molecule
 
 1. Запустите  `molecule test -s ubuntu_xenial` (или с любым другим сценарием, не имеет значения) внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками или не отработать вовсе, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу И из чего может состоять сценарий тестирования.
+
+![image](https://github.com/user-attachments/assets/b5d27325-959f-4045-a9fd-ab4da54292a8)
+
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
+
+![image](https://github.com/user-attachments/assets/a62c904c-b02a-428d-9d43-c67dbfbf9351)
+
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
-4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
+
+![image](https://github.com/user-attachments/assets/29381b0a-9142-4e16-9f27-085f3128740d)
+
+
+Не понял, почему появились данные ошибки, остальные исправил:
+Traceback (most recent call last):
+  File "/usr/local/bin/molecule", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+
+4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
+
+
+
+
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
