@@ -1,5 +1,7 @@
-galaxy_info:
-  author: Oleg
+  galaxy_info:
+  role_name: Oleg
+#  author: Oleg
+  namespace: my_galaxy_namespace
   description: install vector
   company: HW 08-ansible-04-role
 
@@ -54,6 +56,6 @@ galaxy_info:
     # NOTE: A tag is limited to a single word comprised of alphanumeric characters.
     #       Maximum 20 tags per role.
 
-dependencies: []
+  dependencies: []
   # List your role dependencies here, one per line. Be sure to remove the '[]' above,
   # if you add dependencies to this list.
