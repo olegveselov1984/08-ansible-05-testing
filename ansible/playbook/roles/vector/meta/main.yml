@@ -1,8 +1,15 @@
 galaxy_info:
-  namespace: my_hw
-  author: Oleg
-  description: install vector
-  company: HW 08-ansible-04-role
+  # namespace: my_hw
+  # author: Oleg
+  # description: install vector
+  # company: HW 08-ansible-04-role
+
+  author: Oleg Veselov
+  description: Install Vertor
+  company: Netology
+  role_name: my_name
+  namespace: my_galaxy_namespace
+
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
