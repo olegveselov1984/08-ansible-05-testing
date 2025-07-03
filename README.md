@@ -55,9 +55,38 @@ Traceback (most recent call last):
 
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
+
+docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playbook/roles/vector/:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+
+
+
+
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
-5. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
-6. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
+
+![image](https://github.com/user-attachments/assets/3b6a1047-314b-4329-9bec-d096f8848bfd)
+
+
+
+
+
+
+4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
+
+![image](https://github.com/user-attachments/assets/1a63c600-426b-4166-8e9a-294220f79bbc)
+
+sudo molecule init scenario tox  --driver-name=podman
+
+
+pip3 install selinux ansible-lint==5.1.3 yamllint==1.26.3 lxml molecule==3.4.0 molecule_podman jmespath
+
+
+
+5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
+
+![image](https://github.com/user-attachments/assets/2a302701-c296-411b-a21b-88e46dca32bb)
+
+
+
 8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
