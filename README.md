@@ -25,26 +25,12 @@
 
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
-![image](https://github.com/user-attachments/assets/29381b0a-9142-4e16-9f27-085f3128740d)
+![image](https://github.com/user-attachments/assets/05293cd8-6854-44da-b0de-51f9b2a3fe15)
 
-
-Не понял, почему появились данные ошибки, остальные исправил:
-Traceback (most recent call last):
-  File "/usr/local/bin/molecule", line 8, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1161, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1082, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1697, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1443, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 788, in invoke
-    return __callback(*args, **kwargs)
 
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
 
+![image](https://github.com/user-attachments/assets/56b8e104-7b91-48e4-8b3c-f78c3b98cf33)
 
 
 
@@ -68,23 +54,18 @@ docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playb
 
 
 
-
-
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
 ![image](https://github.com/user-attachments/assets/1a63c600-426b-4166-8e9a-294220f79bbc)
 
 sudo molecule init scenario tox  --driver-name=podman
 
-
 pip3 install selinux ansible-lint==5.1.3 yamllint==1.26.3 lxml molecule==3.4.0 molecule_podman jmespath
-
 
 
 5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 
 ![image](https://github.com/user-attachments/assets/2a302701-c296-411b-a21b-88e46dca32bb)
-
 
 
 8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
