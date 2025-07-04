@@ -26,7 +26,9 @@
 
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
-![image](https://github.com/user-attachments/assets/09d7f844-c919-4caf-ae4f-3cc178f21a34)
+Исправил ошибки в файле main.yaml
+![image](https://github.com/user-attachments/assets/0ab1c870-0720-438b-8461-36e73445a8c7)
+
 
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
 
