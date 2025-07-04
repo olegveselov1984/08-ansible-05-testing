@@ -32,12 +32,15 @@
 
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
 
-![image](https://github.com/user-attachments/assets/56b8e104-7b91-48e4-8b3c-f78c3b98cf33)
-
-
+![image](https://github.com/user-attachments/assets/941eb119-9376-4efb-a68e-ce9cbf1b9f45)
 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
+
+![image](https://github.com/user-attachments/assets/b3081b64-7b4f-4be2-a7b7-20650e3d246d)
+
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+
+   
 
 ### Tox
 
