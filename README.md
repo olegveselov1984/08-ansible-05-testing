@@ -17,7 +17,8 @@
 
 1. Запустите  `molecule test -s ubuntu_xenial` (или с любым другим сценарием, не имеет значения) внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками или не отработать вовсе, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу И из чего может состоять сценарий тестирования.
 
-![image](https://github.com/user-attachments/assets/b5d27325-959f-4045-a9fd-ab4da54292a8)
+![image](https://github.com/user-attachments/assets/6b8a7c57-94b5-4cf9-96aa-8547c87ccac7)
+
 
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
 
@@ -25,16 +26,21 @@
 
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
-![image](https://github.com/user-attachments/assets/09d7f844-c919-4caf-ae4f-3cc178f21a34)
+Исправил ошибки в файле main.yaml
+![image](https://github.com/user-attachments/assets/0ab1c870-0720-438b-8461-36e73445a8c7)
+
 
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
 
-![image](https://github.com/user-attachments/assets/56b8e104-7b91-48e4-8b3c-f78c3b98cf33)
-
-
+![image](https://github.com/user-attachments/assets/941eb119-9376-4efb-a68e-ce9cbf1b9f45)
 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
+
+![image](https://github.com/user-attachments/assets/b3081b64-7b4f-4be2-a7b7-20650e3d246d)
+
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+
+   
 
 ### Tox
 
