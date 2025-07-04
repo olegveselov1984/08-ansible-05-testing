@@ -50,13 +50,7 @@
 
 docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playbook/roles/vector/:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 
-
-
-
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
-
-![image](https://github.com/user-attachments/assets/3b6a1047-314b-4329-9bec-d096f8848bfd)
-
 
 
 
