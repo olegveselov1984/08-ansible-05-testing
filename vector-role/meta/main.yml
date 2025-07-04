@@ -2,6 +2,8 @@ galaxy_info:
   author: Oleg
   description: install vector
   company: HW 08-ansible-04-role
+  role_name: install
+  namespace: install
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
