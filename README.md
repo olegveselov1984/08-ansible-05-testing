@@ -56,6 +56,9 @@ docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playb
 
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
+![image](https://github.com/user-attachments/assets/8a53196a-7b54-45db-89c4-32bfede94e4d)
+
+
 ![image](https://github.com/user-attachments/assets/1a63c600-426b-4166-8e9a-294220f79bbc)
 
 sudo molecule init scenario tox  --driver-name=podman
