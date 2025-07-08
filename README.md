@@ -22,12 +22,15 @@
 
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
 
-![image](https://github.com/user-attachments/assets/a62c904c-b02a-428d-9d43-c67dbfbf9351)
+![image](https://github.com/user-attachments/assets/7e0969df-49ac-4680-a987-585a452e5582)
+
 
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
 Исправил ошибки в файле main.yaml
-![image](https://github.com/user-attachments/assets/0ab1c870-0720-438b-8461-36e73445a8c7)
+![image](https://github.com/user-attachments/assets/fe233337-ef32-4508-8e08-fc1c5785203e)
+
+![image](https://github.com/user-attachments/assets/d106437a-37e5-4700-83a8-8b5aaf01461f)
 
 
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
@@ -36,11 +39,12 @@
 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 
-![image](https://github.com/user-attachments/assets/b3081b64-7b4f-4be2-a7b7-20650e3d246d)
+![image](https://github.com/user-attachments/assets/8d026fac-f423-4813-97b8-949525a6aaa7)
+
 
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
-   https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.1
+https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.2
    
 
 ### Tox
@@ -48,22 +52,22 @@
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 
-docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playbook/roles/vector/:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+(venv) ubuntu@ubuntu:~/src/ansible/08-ansible-05-testing/vector-role$ docker run --privileged=True -v /home/ubuntu/src/ansible/08-ansible-05-testing/vector-role:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
-
+![image](https://github.com/user-attachments/assets/78de3b10-e01f-4d89-8336-5c85cb4d29d6)
 
 
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
-![image](https://github.com/user-attachments/assets/8a53196a-7b54-45db-89c4-32bfede94e4d)
-
-
-![image](https://github.com/user-attachments/assets/1a63c600-426b-4166-8e9a-294220f79bbc)
-
 sudo molecule init scenario tox  --driver-name=podman
 
-pip3 install selinux ansible-lint==5.1.3 yamllint==1.26.3 lxml molecule==3.4.0 molecule_podman jmespath
+![image](https://github.com/user-attachments/assets/21607d0c-23f4-42ab-88df-b75ccf9d7e11)
+
+Необходимо откорректировать строку для работы:
+    {posargs:molecule test -s tox --destroy always}
+
+![image](https://github.com/user-attachments/assets/a90d7c65-5164-4d49-89e2-74692658ca6a)
 
 
 5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
