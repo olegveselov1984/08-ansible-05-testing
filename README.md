@@ -64,13 +64,15 @@ sudo molecule init scenario tox  --driver-name=podman
 
 ![image](https://github.com/user-attachments/assets/21607d0c-23f4-42ab-88df-b75ccf9d7e11)
 
+
+
+5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
+
 Необходимо откорректировать строку для работы:
     {posargs:molecule test -s tox --destroy always}
 
 ![image](https://github.com/user-attachments/assets/a90d7c65-5164-4d49-89e2-74692658ca6a)
 
-
-5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 
 ![image](https://github.com/user-attachments/assets/24e7d99b-747f-4f96-af8f-d5e8d39622d9)
 
