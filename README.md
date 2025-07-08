@@ -71,10 +71,8 @@ sudo molecule init scenario tox  --driver-name=podman
 Необходимо откорректировать строку для работы:
     {posargs:molecule test -s tox --destroy always}
 
-![image](https://github.com/user-attachments/assets/a90d7c65-5164-4d49-89e2-74692658ca6a)
+![image](https://github.com/user-attachments/assets/50f4d156-20f4-463d-b0b2-cfa0db350038)
 
-
-![image](https://github.com/user-attachments/assets/24e7d99b-747f-4f96-af8f-d5e8d39622d9)
 
 
 6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
