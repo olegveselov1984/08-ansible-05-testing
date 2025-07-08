@@ -52,13 +52,16 @@ https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.2
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 
-docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playbook/roles/vector/:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+(venv) ubuntu@ubuntu:~/src/ansible/08-ansible-05-testing/vector-role$ docker run --privileged=True -v /home/ubuntu/src/ansible/08-ansible-05-testing/vector-role:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
+![image](https://github.com/user-attachments/assets/78de3b10-e01f-4d89-8336-5c85cb4d29d6)
 
 
 
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
+
+sudo molecule init scenario tox  --driver-name=podman
 
 ![image](https://github.com/user-attachments/assets/21607d0c-23f4-42ab-88df-b75ccf9d7e11)
 
@@ -68,7 +71,7 @@ docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playb
 
 ![image](https://github.com/user-attachments/assets/1a63c600-426b-4166-8e9a-294220f79bbc)
 
-sudo molecule init scenario tox  --driver-name=podman
+
 
 pip3 install selinux ansible-lint==5.1.3 yamllint==1.26.3 lxml molecule==3.4.0 molecule_podman jmespath
 
