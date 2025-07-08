@@ -50,10 +50,10 @@
   #   - vector
   #   - config
 
-- name: Start vector service
-  ansible.builtin.service:
-    name: vector
-    state: started
+# - name: Start vector service
+#   ansible.builtin.service:
+#     name: vector
+#     state: started
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
