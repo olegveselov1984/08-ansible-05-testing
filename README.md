@@ -22,12 +22,15 @@
 
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
 
-![image](https://github.com/user-attachments/assets/a62c904c-b02a-428d-9d43-c67dbfbf9351)
+![image](https://github.com/user-attachments/assets/7e0969df-49ac-4680-a987-585a452e5582)
+
 
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
 Исправил ошибки в файле main.yaml
-![image](https://github.com/user-attachments/assets/0ab1c870-0720-438b-8461-36e73445a8c7)
+![image](https://github.com/user-attachments/assets/fe233337-ef32-4508-8e08-fc1c5785203e)
+
+![image](https://github.com/user-attachments/assets/d106437a-37e5-4700-83a8-8b5aaf01461f)
 
 
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
@@ -36,11 +39,12 @@
 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 
-![image](https://github.com/user-attachments/assets/b3081b64-7b4f-4be2-a7b7-20650e3d246d)
+![image](https://github.com/user-attachments/assets/8d026fac-f423-4813-97b8-949525a6aaa7)
+
 
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
-   https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.1
+https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.2
    
 
 ### Tox
