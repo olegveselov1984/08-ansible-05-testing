@@ -58,22 +58,16 @@ https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.2
 ![image](https://github.com/user-attachments/assets/78de3b10-e01f-4d89-8336-5c85cb4d29d6)
 
 
-
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
 sudo molecule init scenario tox  --driver-name=podman
 
 ![image](https://github.com/user-attachments/assets/21607d0c-23f4-42ab-88df-b75ccf9d7e11)
 
+Необходимо откорректировать строку для работы:
+    {posargs:molecule test -s tox --destroy always}
 
-![image](https://github.com/user-attachments/assets/8a53196a-7b54-45db-89c4-32bfede94e4d)
-
-
-![image](https://github.com/user-attachments/assets/1a63c600-426b-4166-8e9a-294220f79bbc)
-
-
-
-pip3 install selinux ansible-lint==5.1.3 yamllint==1.26.3 lxml molecule==3.4.0 molecule_podman jmespath
+![image](https://github.com/user-attachments/assets/a90d7c65-5164-4d49-89e2-74692658ca6a)
 
 
 5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
