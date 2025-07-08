@@ -60,6 +60,9 @@ docker run --privileged=True -v /src/ansible/08-ansible-05-testing/ansible/playb
 
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
+![image](https://github.com/user-attachments/assets/21607d0c-23f4-42ab-88df-b75ccf9d7e11)
+
+
 ![image](https://github.com/user-attachments/assets/8a53196a-7b54-45db-89c4-32bfede94e4d)
 
 
