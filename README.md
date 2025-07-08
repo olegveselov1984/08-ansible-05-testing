@@ -72,13 +72,19 @@ sudo molecule init scenario tox  --driver-name=podman
 
 5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 
-![image](https://github.com/user-attachments/assets/2a302701-c296-411b-a21b-88e46dca32bb)
+![image](https://github.com/user-attachments/assets/24e7d99b-747f-4f96-af8f-d5e8d39622d9)
 
 
-8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
-9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 
-https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.0
+
+![image](https://github.com/user-attachments/assets/a247c240-bf0d-432a-8bd7-280900970539)
+
+Не все версии поддерживают роль.
+
+7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+
+https://github.com/olegveselov1984/08-ansible-05-testing/releases/tag/v1.0.3
 
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
