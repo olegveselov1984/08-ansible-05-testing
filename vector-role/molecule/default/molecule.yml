@@ -1,0 +1,36 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: centos7
+ #   image: quay.io/centos/centos:stream8
+    image: docker.io/pycontribs/centos:7
+    pre_build_image: true
+
+  # - name: hostA
+  #   image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
+  #   command: ${MOLECULE_DOCKER_COMMAND:-""}
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:rw
+  #   cgroupns_mode: host
+  #   priveleged: true
+  #   pre_build_image: true
+
+
+#     platforms:
+#   - name: ubuntu
+#     image: docker.io/pycontribs/ubuntu:latest
+#     pre_build_image: true
+
+#     platforms:
+#   - name: oraclelinux
+#  #   image: docker.io/oraclelinux:8
+#     image:    docker.io/library/oraclelinux:8 #-slim
+#     pre_build_image: true
+
+# provisioner:
+#   name: ansible
+verifier:
+  name: ansible

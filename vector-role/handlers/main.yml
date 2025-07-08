@@ -1,4 +1,5 @@
-- name: Start vector service
-  ansible.builtin.service:
-    name: vector
-    state: restarted
+# ---
+# - name: Start vector service
+#   ansible.builtin.service:
+#     name: vector
+#     state: started

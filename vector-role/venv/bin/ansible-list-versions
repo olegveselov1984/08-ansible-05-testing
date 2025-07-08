@@ -1,0 +1,12 @@
+#!/home/ubuntu/src/ansible/08-ansible-05-testing/vector-role/venv/bin/python3
+
+
+from ansible_dev_tools.utils import AnsibleVersionTester
+
+def main():
+    AVT = AnsibleVersionTester()
+    AVT.list_versions()
+
+
+if __name__ == "__main__":
+    main()

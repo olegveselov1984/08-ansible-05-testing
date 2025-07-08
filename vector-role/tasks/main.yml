@@ -6,6 +6,17 @@
     - vector
     - distr
 
+# - name: Install prerequisites
+#   ansible.builtin.yum:
+#     name:
+#       - wget
+#       - gnupg
+#       - apt-transport-https
+#       - ca-certificates
+#     state: present
+#     update_cache: yes
+
+
 - name: Install vector packages
   become: true
   ansible.builtin.yum:
@@ -34,10 +45,15 @@
     src: templates/vector.yaml.j2
     dest: "{{ vector_config_dir }}/vector.yml"
     mode: "0644"
-  notify: Start vector service
-  tags:
-    - vector
-    - config
+  # notify: Start vector service
+  # tags:
+  #   - vector
+  #   - config
+
+- name: Start vector service
+  ansible.builtin.service:
+    name: vector
+    state: started
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
